@@ -1,0 +1,546 @@
+@media screen and (min-width: 768px){
+    @include col-md(12);
+    @include mycol-md(5);
+    h2{ font-size: $fontSize2 * 1.5; }
+    h3{ font-size: $fontSize3 * 1.5; }
+    h4, li{ font-size: $fontSize4 * 1.5; }
+    h5{ font-size: $fontSize5 * 1.5; }
+    h6, p, a{ font-size: $fontSize6 * 1.5; }
+}
+
+@media screen and (min-width: 768px){
+    header{ right: inherit; }
+    .hamburger{ display: none; }
+    #ham{
+        display: none;
+        +.menu{
+            display: block;
+        }
+    }
+    .menu{
+        display: block;
+        height: 60px;
+        padding-top: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: none;
+    }
+
+    .main-title-group{
+        width: 20%;
+        height: inherit;
+        float: left;
+        margin: 0;
+        position: relative;
+        overflow: initial;
+    }
+
+    .main-title{
+        width: 100%;
+        &:before, &:after{
+            display: none;
+        }
+        a{
+            display: block;
+            width: inherit;
+            font-size: 16px;
+            line-height: 60px;
+            text-align: center;
+            background-color: #222;
+            padding: 0;
+            transform: translateX(0px);
+        }
+    }
+ 
+    .sub-title{
+        width: 100%;
+        display: none;
+        background-color: transparent;
+        transform: scale(1);
+        transform-origin: top center;
+        position: absolute;
+        left: 0;
+        z-index: 100;
+        a{
+            float: none;   
+            height: 60px;
+            display: block;
+            font-size: 14px;
+            text-align: center;
+            color: $colorSec;
+            background-color: #222;
+            padding: 20px 0px;
+            transform: translateY(0);
+        }
+        @for $i from 3 through 6{
+            &:nth-child(#{$i}){
+                top: ($i - 2) * 60px;
+            }
+        }
+    }
+
+    @keyframes egg{
+        0%{
+            left: -100px;
+            transform: rotateZ(-30deg);
+          }
+      100%{
+            left: -50px;
+            transform: rotateZ(10deg);
+          }
+    }
+
+    @for $i from 1 through 4{
+        #main-title-#{$i}-checked{
+            &:checked{
+                ~li{
+                    a{
+                        animation-fill-mode: backwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .wrap{
+        .sitemap{
+            float: left;
+            li{
+                height: auto;
+                padding: 20px 0;
+            }
+            h5, h5 a{
+                font-size: 22px;
+            }
+            h6 a{ font-size: 16px; line-height: 1.8;}
+        }
+    }
+
+    .share{ float: left; padding-top: 125px; }
+    .copyright{
+        clear: both;
+        padding-top: 30px;
+        h6{
+            &:after{
+                top: -25px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .wrap{
+        .bear-story-chapter{
+            width: 25%;
+            margin: 30px 1%;
+            float: left;
+            &:nth-child(2){ margin-left: 9.5%; }
+            &:before, &:after{
+                bottom: 0;
+                transform: scaleX(0);
+            }
+            &:before{
+                left: 0;
+                border-left: 600px solid #555;
+                border-right: none;
+                border-top: 120px solid transparent;
+                transform-origin: left bottom;
+            }
+            &:after{
+                border-right: 400px solid #333;
+                border-top: 150px solid transparent;
+                border-bottom: none;
+                transform-origin: right bottom;
+            }
+            &:hover:before{ transform: scaleX(1); }
+            &:hover:after{ transform: scaleX(1); }
+        }
+    
+        .bear-story-pic-shell{
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            overflow: hidden;
+            .bear-story-pic{
+                height: 80%;
+                @include pac(0, 0, 0, 0);
+            }
+        }
+    
+        .bear-story-text{
+            min-height: 400px;
+            h3{ text-align: center;}
+            p{ font-size: 20px; }
+        }
+    }
+}
+@media screen and (min-width: 768px){
+    .bear-know-text h3{
+        font-size: 38px;
+        padding-bottom: 10px;
+    }
+
+    .bear-know-slide-long{
+        width: 100%;
+        background-repeat: repeat;
+        background-size: 10% 50%;
+    }
+    .bear-know-slide-chapter{
+        width: 50%;
+        margin: 20px 0;
+        &:nth-child(1){ margin-left: 0; }
+    }
+    .bear-know-slide-arrow{
+        .bear-know-slide-arrow-left,
+        .bear-know-slide-arrow-right{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .para, .video{
+        height: 200px;
+        max-height: 400px;
+    }
+    .para h3, .video-tag{
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-founder{
+        padding: 30px 0;
+        background-image: url('../img/woodbear-1.png');
+        background-position: left bottom;
+        background-size: 1400px 1400px;
+        text-align: center;
+    }
+
+    .bear-founder-title{ margin-bottom: 70px; }
+
+    .bear-founder-donate{
+        margin-left: 40%;
+        width: 25%;
+        min-height: 420px;
+        float: left;
+        &:nth-child(3){
+            margin-left: 10px;
+            margin-bottom: 300px;
+        }
+        .bear-founder-pic-shell{
+            @include rect(100%, 100%, #FEDFE1);
+            padding-bottom: 0;
+            position: static;
+            .bear-founder-pic{
+                @include rect(100px, 200px);
+                margin: auto;
+                position: static;
+                background-size: 100%;
+            }
+        }
+    }
+
+    .bear-founder-plan{
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin: 0 1%;
+        max-width: 280px;
+        min-height: 460px;
+        &:nth-child(4){ margin-top: 0; }
+        .bear-founder-pic-shell{
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+            .bear-founder-pic{
+                width: 100%;
+                @include pac(0, 0, 0, 0);
+            }
+        }
+    }
+
+    .bear-founder-pic-max{ max-width: none; }
+
+    .bear-founder-text{
+        text-align: left;
+        padding: 20px 0;
+        p{ font-size: 20px; }
+    }
+
+    .bear-founder-plan-text{
+        text-align: left;
+        padding: 30px 0;
+    }
+
+    .bear-founder-plan-process h5{ font-size: 16px; }
+}
+
+@media screen and (min-width: 768px){
+    .bear-story-intro-pre-bg{
+        padding-bottom: 50%;
+    }
+    .bear-story-intro-row{
+        width: 266.666666%;
+        overflow: hidden;
+        position: relative;
+    }
+    .bear-story-intro-coll{
+        float: left;
+    }
+    .bear-story-intro-pre-bg-shell{
+        height: 700px;
+        padding-bottom: 0;
+    }
+    .bear-story-intro-pre-pic{
+        height: 100%;
+        background-size: contain;
+    }
+    .bear-story-turn-coll-pic-shell{
+        padding-bottom: 700px;
+    }
+    .bear-story-intro-title h3{
+        height: 100px;
+    }
+    .bear-story-intro-coll-text-shell{
+        height: 300px;
+    }
+    .bear-story-local-text p{
+        width: 1000px;
+    }
+    .bear-story-next-shell{
+        padding: 30px 0;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-story-context{
+        @include pac(10%, 0, null, 0);
+        min-width: 170px;
+        width: 20%;
+    }
+
+    .bear-story-context-text{
+        padding: 0;
+        h4{ line-height: 2; }
+        p{ padding: 0 20px 30px; }
+    }
+
+    .bear-story-obj-grass{
+        transform: translateX(0px)
+                   translateY(66px)
+                   translateZ(-70px);
+    }
+
+    .grass2{
+        @include bgSet(url('../img/forest-grass-1.png'), null, null, contain);
+        transform: translateX(0px)
+                   translateY(0px)
+                   translateZ(0px);
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-story-sis-shell{ padding: 50px 20px; }
+    .bear-story-sis-np-title{
+        float: right;
+        margin-right: 8.333333%;
+        padding: 10px 0;
+        width: 20%;
+        writing-mode: vertical-rl;
+        border-left: 1px solid #222;
+        border-bottom: 1px solid #222;
+        h2{
+            font-size: 60px;
+            margin-right: 10px;
+        }
+        h3{
+            margin-right: 40px;
+            height: 400px;
+            line-height: 1.6;
+            text-align: left;
+        }
+    }
+
+    #bssp1{ width: 40%; padding-bottom: 20%;}
+    #bssp2{ width: 60%; padding-bottom: 30%;}
+    #bssp3{ width: 30%; padding-bottom: 50%;}
+    #bssp4{ width: 40%; padding-bottom: 30%;}
+    #bssp5{ width: 30%; padding-bottom: 50%;}
+    #bssp7{ width: 30%; padding-bottom: 50%;}
+    #bssp8{ width: 50%; padding-bottom: 30%;}
+
+    .bear-story-sis-np p{
+        line-height: 1.6;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-know-quest{
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        &:nth-child(odd) .bear-know-quest-pic-shell{ order: 1 }
+    }
+
+    .bear-know-quest-text{
+        padding: 40px 20px 20px;
+        box-sizing: border-box;
+    }
+
+    .bear-know-quest-choose-shell{
+        text-align: left;
+        padding-bottom: 30px;
+        h3{
+            display: block;
+            margin: 15px 0;
+            padding: 15px 20px;
+        }
+    }
+
+    .no, .yes{ left: 150px; }
+}
+
+@media screen and (min-width: 768px){
+    .bear-news-hot .bear-news-slide,
+    .bear-news-normal .bear-news-slide{
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 768px){
+    iframe{ width: 100%; }
+
+    .bear-news-video-theme{ padding: 50px 20px; }
+
+    .bear-news-video-shell{
+        padding: 50px 20px;
+        @include afterClear;
+    }
+
+    .bear-news-video{
+        float: left;
+        padding: 0;
+        margin-left: 8.333333%;
+    }
+    .bear-news-video-text{ 
+        float: left;
+        height: 200%;
+    }
+    .bear-news-video-hot,
+    .bear-news-video-search{
+        padding: 50px 20px;
+    }
+    .bear-news-video-row-shell{
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+    .video-play-name, .video-name{
+        font-size: 16px;
+        line-height: 1.3;
+    }
+    .video-play-name{
+        padding: 10px 0;
+        width: 100%;
+    }
+    .video-play-time{
+        padding: 5px 0;
+    }
+    .video-play-tag, .video-tag{
+        line-height: 1.2;
+        padding-top: 0px;
+    }
+    .video-play-intro{
+        padding-top: 10px;
+        line-height: 1.3;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-donate-change{
+        height: 50%;
+        h3{
+            padding: 0px;
+            max-width: 40px;
+        }
+    }
+    .bear-support-form{ padding: 50px 80px; }
+    .check{
+        font-size: 22px;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(6),
+        &:nth-child(7){ float: left; }
+    }
+    .check-money li{
+        font-size: 30px;
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bear-support-list{ padding: 50px 0; }
+}
+
+@media screen and (min-width: 768px){
+    .bear-support-list{
+        .bear-founder-plan{
+            display: block;
+            width: 90%;
+            margin: 50px auto;
+            max-width: 1200px;  
+        }
+    }
+
+    .bear-support-list-insideshell{
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .bear-founder-pic-shell,
+    .bear-support-pic-row-shell{
+        float: none;
+        overflow: hidden;
+    }
+
+    .bear-support-text{
+        float: none;
+        display: inline-block;
+        height: 0;
+        padding: 1% 20px 50%;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+    .bear-support-plan{
+        clear: both;
+    }
+    .bear-support-plan-list{
+        @include afterClear;
+    }
+    .bear-support-plan-list-pic-shell{
+        width: 50%;
+        float: left;
+    }
+
+    .bear-support-plan-list-text{
+        width: 50%;
+        float: left;
+        margin: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .bear-support-text{
+        p{ padding-bottom: 10px; }
+        h6{ padding-top: 10px; }
+        .bear-founder-plan-process{ padding-top: 10%; }
+    }
+}

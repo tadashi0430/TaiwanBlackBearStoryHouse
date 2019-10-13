@@ -1,0 +1,9 @@
+@media screen and (min-width: 992px){
+    @include col-lg(12);
+    @include mycol-lg(5);
+    h2{ font-size: $fontSize2 * 1.8; }
+    h3{ font-size: $fontSize3 * 1.8; }
+    h4, li{ font-size: $fontSize4 * 1.8; }
+    h5{ font-size: $fontSize5 * 1.8; }
+    h6, p, a{ font-size: $fontSize6 * 1.8; }
+}
