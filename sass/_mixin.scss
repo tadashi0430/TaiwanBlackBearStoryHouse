@@ -1,0 +1,113 @@
+@mixin col-system{
+    .container{
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        .row{
+            margin: 0 -20px;
+        }
+    }
+}
+
+@mixin col($num){
+    @for $i from 1 through $num{
+        .col-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin col-md($num){
+    @for $i from 1 through $num{
+        .col-md-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin col-lg($num){
+    @for $i from 1 through $num{
+        .col-lg-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin col-xl($num){
+    @for $i from 1 through $num{
+        .col-xl-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin mycol($num){
+    @for $i from 1 through $num{
+        .mycol-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin mycol-md($num){
+    @for $i from 1 through $num{
+        .mycol-md-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin mycol-lg($num){
+    @for $i from 1 through $num{
+        .mycol-lg-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+@mixin mycol-xl($num){
+    @for $i from 1 through $num{
+        .mycol-xl-#{$i}{
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+/* Setting */
+
+@mixin pac($top: null, $left: null, $right: null, $bottom: null, $margin: auto){
+    position: absolute;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    margin: $margin;
+}
+
+@mixin rect($width, $height, $bgc: null){
+    width: $width;
+    height: $height;
+    background-color: $bgc;
+}
+
+@mixin bgSet($bgi: null, $bgr: null, $bgp: null, $bgs: null, $bgc: null){
+    background-image: $bgi;
+    background-repeat: $bgr;
+    background-position: $bgp;
+    background-size: $bgs;
+    background-color: $bgc;
+}
+
+@mixin afterClear{
+    &:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin rand($top, $left :null, $right :null){
+    top: $top;
+    left: $left;
+    right: $right;
+}

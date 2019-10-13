@@ -1,0 +1,143 @@
+@media screen and (min-width: 1200px){
+    @include col-xl(12);
+    @include mycol-xl(5);
+    h2{ font-size: $fontSize2 * 2; }
+    h3{ font-size: $fontSize3 * 2; }
+    h4, li{ font-size: $fontSize4 * 2; }
+    h5{ font-size: $fontSize5 * 2; }
+    h6, p, a{ font-size: $fontSize6 * 2; }
+}
+
+// xl mixin
+@mixin titleXl(){ padding: 20px 0; }
+
+// media
+@media screen and (min-width: 1200px){
+    .aniLineG{
+        top: 200px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .wrap{
+        .sitemap{
+            h5{ font-size: $fontSize5 * 2;}
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .wrap{
+        .bear-story{
+            padding: 50px 0;
+            .bear-title{ @include titleXl();  }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .wrap{
+        .bear-know{
+            padding: 50px 0;
+            .bear-know-title{ @include titleXl(); }
+        }
+        .bear-know-slide-chapter{ width: 25%; }
+        .bear-know-text{
+            p{ line-height: 1.6;}
+        }
+        .bear-news{
+            padding: 50px 0;
+            .bear-news-title{ @include titleXl(); }
+        }
+        .bear-founder{
+            @include bgSet(url('../img/woodbear-xl-1.png'), null, left bottom, 2600px 1450px);
+            padding: 50px 0;
+            .bear-founder-title{@include titleXl(); }
+        }
+        .bear-founder-plan{
+            min-height: 400px;
+            .bear-founder-plan-text{ padding-top: 50px; }
+            .bear-founder-text{
+                h3{ font-size: 40px; }
+                p{ font-size: 30px; }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .bear-story-local-pre{
+        height: 700px;
+    }
+    .bear-story-local-pre-bg-2{
+        background-size: contain;
+        background-position: 0 900px;
+    }
+    .bear-story-intro-pre-paper h3{
+        width: 1000px;
+    }
+    .bear-story-intro-coll-text-shell{
+        height: 350px;
+    }
+    .bear-story-intro-coll-title{
+        width: 200px;
+        background-size: 100%;
+    }
+    .bear-story-rule-paper:nth-child(4){
+        top: 600px;
+        left: 400px;
+    }
+    .bear-story-local-text p{
+        padding: 0;
+        font-size: 20px;
+    }
+    .bear-story-next-shell{
+        padding: 60px 0;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .bear-story-obj-bg{ @include bgSet(null, no-repeat, center 70%, 4000px 2256px); }
+    .bear-story-obj-grass{ @include bgSet(null, repeat-x, left bottom, contain); }
+    .bear-story-obj-bear{
+        animation: bearwalkX1200 30s infinite,
+                   bearwalkY .9s infinite alternate;
+    }
+    .bear-story-pers{ height: 700px; }
+    .bear-story-obj-tree{ height: 800px; }
+}
+
+@media screen and (min-width: 1200px){
+    #bssp1{ width: 40%; padding-bottom: 20%;}
+    #bssp2{ width: 30%; padding-bottom: 15%;}
+    #bssp3{ width: 15%; padding-bottom: 20%;}
+    #bssp4{ width: 40%; padding-bottom: 20%;}
+    #bssp5{ width: 10%; padding-bottom: 10%;}
+    #bssp6{ width: 30%; padding-bottom: 20%;}
+    #bssp7{ width: 18%; padding-bottom: 15%;}
+    #bssp8{ width: 40%; padding-bottom: 30%;}
+}
+
+@media screen and (min-width: 1200px){
+    .video-play-tag, .video-tag{ padding-top: 10px; }
+    .video-play-name, .video-name{ font-size: 18px; }
+}
+
+@media screen and (min-width: 1200px){
+    .bear-support-form-shell{ padding: 80px 20px 0; }
+}
+
+@media screen and (min-width: 1200px){
+    .bear-support-text{
+        p{ padding-bottom: 30px; }
+        h6{
+            padding-top: 10px;
+            font-size: 22px;
+        }
+        .bear-founder-plan-process{
+            padding-top: 30%;
+            h5{ font-size: 22px; }
+        }
+        .bear-founder-plan-line{ height: 16px; }
+    }
+}
