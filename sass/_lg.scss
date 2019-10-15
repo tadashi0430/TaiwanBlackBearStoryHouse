@@ -6,4 +6,14 @@
     h4, li{ font-size: $fontSize4 * 1.8; }
     h5{ font-size: $fontSize5 * 1.8; }
     h6, p, a{ font-size: $fontSize6 * 1.8; }
+
+    .bear-news-slide-shell{
+        .bear-news-slide{
+            .para{
+                @include rect(30%, 250px);
+                p{ font-size: $fontSize6 * 1.5; }
+            }    
+        }
+    }
+
 }

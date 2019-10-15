@@ -111,3 +111,9 @@
     left: $left;
     right: $right;
 }
+
+@mixin mpb($margin:null, $padding:null, $box:null){
+    margin: $margin;
+    padding: $padding;
+    box-sizing: $box;
+}

@@ -7,7 +7,7 @@
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>黑熊頻道</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="jquery-3.4.1.js"></script>
     <script src="script.js"></script>
 </head>
@@ -153,111 +153,27 @@
             </div>
         </div>
     </div>
-    <!----------------------- bear news video hot ----------------------->
+    <!----------------------- bear news play ----------------------->
 
     <div class="wrap">
-        <div class="bear-news-video-hot container">
+        <div class="bear-news-video-shell container">
             <div class="row">
-                <div class="bear-news-video-hot-title col-12">
-                    <h3>熱門影片</h3>
-                </div>
-                <div class="bear-news-video-row-shell col-12">
-                    <div class="bear-news-video-row">
-                        <div class="video videoHot col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bear-news-video-row">
-                        <div class="video videoHot col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bear-news-video-row">
-                        <div class="video videoHot col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bear-news-video-row">
-                        <div class="video videoHot col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bear-news-video-row">
-                        <div class="video videoHot col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!----------------------- bear news video search ----------------------->
-
-    <div class="wrap">
-        <div class="bear-news-video-search container">
-            <div class="row">
-                <div class="bear-news-video-search-title">
-                    <h3>查詢您想要的影片</h3>
-                </div>
-                <div class="bear-news-video-search-shell col-12">
+                <div class="bear-search-shell col-8">
                     <div class="bear-search-bar col-12">
-                        <input class="bear-search-text col-8">
-                        <input type="button" class="bear-search-submit col-2">
+                        <input class="bear-search-text col-10">
+                        <input type="submit" class="bear-search-submit col-2" value="查詢">
                     </div>
-                </div>
-                <div class="bear-news-video-theme-link-shell col-12">
-                    <div class="bear-news-video-theme-link col-3">
-                        <h3>深入了解</h3>
-                    </div>
-                    <div class="bear-news-video-theme-link col-3">
-                        <h3>黑熊世界</h3>
-                    </div>
-                    <div class="bear-news-video-theme-link col-3">
-                        <h3>保育紀錄</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!----------------------- bear news video theme 1 ----------------------->
-
-    <div class="wrap">
-        <div class="bear-news-video-theme theme-1 container">
-            <div class="row">
-                <div class="bear-news-video-title col-12">
-                    <h3>深入了解</h3>
-                    <p>這個單元收錄了更深入的台灣黑熊影片</p>
+                    <ul class="bear-search-tag-shell col-12">
+                        <li id="all" class="bear-search-tag">全部影片</li>
+                        <li id="lect" class="bear-search-tag">深入了解</li>
+                        <li id="found" class="bear-search-tag">募資活動</li>
+                        <li id="event" class="bear-search-tag">黑熊活動</li>
+                    </ul>
                 </div>
                 <div class="bear-news-video-row-shell col-12">
-                    <div id="theme1" class="bear-news-video-row">
+                    <div id="theme1" class="bear-news-video-row col-12">
                         <div class="bear-news-video-row">
-                            <div class="video videoInside col-5">
+                            <div class="bear-news-video-text videoInside col-5">
                                 <h3 class="video-tag"></h3>
                                 <h3 class="video-name"></h3>
                                 <h4 class="video-time"></h4>
@@ -265,39 +181,9 @@
                                     <p class="video-intro"></p>
                                 </div>
                             </div>
-                            <div class="video videoInside col-5">
-                                <h3 class="video-tag"></h3>
-                                <h3 class="video-name"></h3>
-                                <h4 class="video-time"></h4>
-                                <div class="video-hover-show">
-                                    <p class="video-intro"></p>
-                                </div>
-                            </div>
-                            <div class="video videoInside col-5">
-                                <h3 class="video-tag"></h3>
-                                <h3 class="video-name"></h3>
-                                <h4 class="video-time"></h4>
-                                <div class="video-hover-show">
-                                    <p class="video-intro"></p>
-                                </div>
-                            </div>
-                            <div class="video videoInside col-5">
-                                <h3 class="video-tag"></h3>
-                                <h3 class="video-name"></h3>
-                                <h4 class="video-time"></h4>
-                                <div class="video-hover-show">
-                                    <p class="video-intro"></p>
-                                </div>
-                            </div>
-                            <div class="video videoInside col-5">
-                                <h3 class="video-tag"></h3>
-                                <h3 class="video-name"></h3>
-                                <h4 class="video-time"></h4>
-                                <div class="video-hover-show">
-                                    <p class="video-intro"></p>
-                                </div>
-                            </div>
-                            <div class="video videoInside col-5">
+                        </div>
+                        <div class="bear-news-video-row">
+                            <div class="bear-news-video-text videoInside col-5">
                                 <h3 class="video-tag"></h3>
                                 <h3 class="video-name"></h3>
                                 <h4 class="video-time"></h4>
@@ -308,121 +194,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!----------------------- bear news video theme 2 ----------------------->
-
-    <div class="wrap">
-        <div class="bear-news-video-theme theme-2 container">
-            <div class="row">
-                <div class="bear-news-video-title col-12">
-                    <h3>黑熊世界</h3>
-                    <p>這個單元收錄了更深入的台灣黑熊影片</p>
-                </div>
-                <div class="bear-news-video-row-shell col-12">
-                    <div id="theme2" class="bear-news-video-row">
-                        <div class="video videoWorld col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoWorld col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoWorld col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoWorld col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoWorld col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!----------------------- bear news video theme 3 ----------------------->
-
-    <div class="wrap">
-        <div class="bear-news-video-theme theme-3 container">
-            <div class="row">
-                <div class="bear-news-video-title col-12">
-                    <h3>保育紀錄</h3>
-                    <p>這個單元收錄了更深入的台灣黑熊影片</p>
-                </div>
-                <div class="bear-news-video-row-shell col-12">
-                    <div id="theme3" class="bear-news-video-row">
-                        <div class="video videoRecord col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoRecord col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoRecord col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoRecord col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                        <div class="video videoRecord col-5">
-                            <h3 class="video-tag"></h3>
-                            <h3 class="video-name"></h3>
-                            <h4 class="video-time"></h4>
-                            <div class="video-hover-show">
-                                <p class="video-intro"></p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="bear-news-pages">
+                    <ul>
+                        <li>前一頁</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>下一頁</li>
+                    </ul>
                 </div>
             </div>
         </div>

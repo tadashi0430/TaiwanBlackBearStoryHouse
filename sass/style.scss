@@ -44,9 +44,7 @@ body{ font-family: Leelawadee UI, Arial, Noto sans cjk tc, "微軟正黑體"; }
 
 .loading{
     @include rect(100%, 600px, #ddd)
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include pac(0, 0, null, null, null);
     z-index: 9999;
     h3{
         text-align: center;
@@ -114,11 +112,7 @@ body{ font-family: Leelawadee UI, Arial, Noto sans cjk tc, "微軟正黑體"; }
 
 .aniLineG{
     @include rect(140px, 60px, transparent);
-    position: absolute;
-    top: 160px;
-    left: 0;
-    right: 0;
-    margin: auto;
+    @include pac(160px, 0, 0, null);
 }
 
 .aniLine{
@@ -126,12 +120,8 @@ body{ font-family: Leelawadee UI, Arial, Noto sans cjk tc, "微軟正黑體"; }
     position: absolute;
     top: 0;
     animation: 1s infinite alternate backwards;
-    &:nth-child(odd){
-        animation-name: aniLineS;
-    }
-    &:nth-child(even){
-        animation-name: aniLineS2;
-    }
+    &:nth-child(odd){ animation-name: aniLineS; }
+    &:nth-child(even){ animation-name: aniLineS2; }
     @for $i from 1 through 12{
         &:nth-child(#{$i}){
             animation-delay: (-0.1 + $i / 10) + s;
@@ -190,9 +180,7 @@ header{
 .egg{
     @include rect(100px, 100px);
     @include bgSet(url('../img/egg.png'), no-repeat, null, contain);
-    position: absolute;
-    top: 60px;
-    left: -500px;
+    @include pac(60px, -500px, null, null, null);
 }
 
 header:hover .egg{
@@ -203,17 +191,13 @@ header:hover .egg{
 
 .hamburger{
     @include rect(60px, 60px, #555);
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include pac(0, null, 0, null, null);
     overflow: hidden;
     &:after{
         @include rect(100%, 20px, #fff);
         content: '';
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
+        @include pac(0, 0, null, null, null);
         transform: skewY(10deg) translateY(100px);
         opacity: .2;
         animation: burgerLight 4s infinite;
@@ -281,16 +265,10 @@ header:hover .egg{
 }
 
 #ham {
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include pac(0, null, 0, null, null);
     z-index: -9999;
-    +.menu{
-        display: none;
-    }
-    &:checked+.menu{
-        display: block;
-    }
+    +.menu{ display: none; }
+    &:checked+.menu{ display: block; }
 }
 
 /* --hamburger End-- */
@@ -379,17 +357,14 @@ header:hover .egg{
         color: $colorSec;
         background-image: linear-gradient(10deg, #222, #444);
         background-color: #333;
-        padding: 20px 30px;
-        box-sizing: border-box;
+        @include mpb(null, 20px 30px, border-box);
         transform: translateY(-100px);
     }
 }
 
 @for $i from 1 through 4{
     #main-title-#{$i}-checked{
-        position: absolute;
-        top: 0;
-        left: -9999px;
+        @include pac(0, -9999px, null, null, null);
         z-index: -9999;
         &:checked{
             ~li{
@@ -456,10 +431,7 @@ header:hover .egg{
         h5{
             color: $colorSec;
             padding: 10px 0;
-            a{
-                color: $colorSec;
-                font-size: 16px;
-            }
+            a{ color: $colorSec; }
         }
         h6{
             color: $colorSec;
@@ -523,9 +495,12 @@ header:hover .egg{
 
 .wrap{
     .bear-info{
-        padding: 160px 80px;
+        padding: 0 80px;
+        height: 600px;
+        position: relative;
         @include bgSet(url('../img/index-banner.jpg'), null, center, cover);
         .bear-info-text{
+            @include pac(0, 0, 0, 0);
             h2{
                 text-align: center;
                 line-height: 2;
@@ -574,9 +549,7 @@ header:hover .egg{
 .bear-story-chapter{
     width: calc(100% - 60px);
     max-width: 600px;
-    margin: 25px auto;
-    padding: 15px;
-    box-sizing: border-box;
+    @include mpb(25px auto, 15px, border-box);
     background-image: url('../img/paper-rect-1.jpg');
     box-shadow: 2px 2px 5px 0 #666,
                 0 0 0 0 #fff inset;
@@ -633,8 +606,7 @@ header:hover .egg{
 
 .bear-story-text{
     float: left;
-    padding: 30px 20px 0;
-    box-sizing: border-box;
+    @include mpb(null, 30px 20px 0, border-box);
     h3{ padding-bottom: 30px; }
     p{ line-height: 1.6; }
 }
@@ -740,8 +712,7 @@ header:hover .egg{
 
 .bear-know-slide-long{
     width: 400%;
-    padding: 20px 0;
-    box-sizing: border-box;
+    @include mpb(null, 20px 0, border-box);
     @include bgSet(url('../img/index-bear-know-cloth.jpg'), null, null, contain, pink);
     overflow: hidden;
     position: relative;
@@ -788,11 +759,7 @@ header:hover .egg{
         transition: width .3s,
                     height .3s .3s;
     }
-    &:after{
-        content: '';
-        display: block;
-        clear: both;
-    }
+    @include afterClear;
     &:hover .bear-know-icon{
         animation: bearRotate 2s .5s;
     }
@@ -830,6 +797,7 @@ header:hover .egg{
 /* Bear News */
 
 .bear-news{
+    height: 1200px;
     @include bgSet(url('../img/index-bear-news-bg.jpg'), null, null, cover);
     padding: 15px 0;
     overflow: hidden;
@@ -840,6 +808,16 @@ header:hover .egg{
             font-weight: 600;
         }
     }
+    .bear-news-title{
+        margin-bottom: 35px;
+        background-image: url('../img/paper-rect-1.jpg');
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 0 3px 0 #222,
+                    0 0 0 0 #fff inset;
+        transform: scale(1);
+        transform-origin: left center;
+    }
     &:hover .bear-news-title{
         box-shadow: 0 0 3px 0 #222,
                     0 0 10px 3px #fff inset;
@@ -848,158 +826,123 @@ header:hover .egg{
     }
 }
 
-.bear-news-title{
-    margin-bottom: 35px;
-    background-image: url('../img/paper-rect-1.jpg');
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 0 3px 0 #222,
-                0 0 0 0 #fff inset;
-    transform: scale(1);
-    transform-origin: left center;
-}
-
 .bear-search-shell{
     padding: 10px;
     margin: 10px auto 50px;
     background-image: url('../img/bear-news-search.jpg');
-}
-
-.bear-search-bar{
-    margin: auto;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    &:after{
-        content: '';
-        display: block;
-        clear: both;
+    .bear-search-bar{
+        @include mpb(auto, 10px 20px, border-box);
+        @include afterClear;
+        .bear-search-text, .bear-search-submit{
+            float: left;
+            display: block;
+            box-shadow: 0 0 1px 0 #222;
+            border: none;
+            height: 30px;
+        }
+        .bear-search-text{ padding: 0; }
+    }
+    .bear-search-tag-shell{
+        @include mpb(10px 0, 0 15px);
+        font-size: 0;
+        .bear-search-tag{
+            display: inline-block;
+            cursor: pointer;
+            @include mpb(5px 2px, 10px 15px);
+            text-align: center;
+            border-radius: 3px;
+        }
+        #all{
+            background-color: $colorAll;
+            &:hover{ background-color: lighten($colorAll, 10%);}
+        }
+        #lect{
+            background-color: $colorLect;
+            &:hover{ background-color: lighten($colorLect, 10%);}
+        }
+        #found{
+            background-color: $colorFound;
+            &:hover{ background-color: lighten($colorFound, 10%);}
+        }
+        #event{
+            background-color: $colorEvent;
+            &:hover{ background-color: lighten($colorEvent, 10%);}
+        }
     }
 }
-
-.bear-search-text{
-    float: left;
-    display: block;
-    height: 30px;
-    padding: 0;
-    box-shadow: 0 0 1px 0 #222;
-    border: none;
-}
-
-.bear-search-submit{
-    float: left;
-    display: block;
-    height: 30px;
-    box-shadow: 0 0 1px 0 #222;
-    border: none;
-}
-
-.bear-search-tag-shell{
-    margin: 10px 0;
-    padding: 0 15px;
-    font-size: 0;
-    a{ display: inline-block; }
-}
-
-.bear-search-tag{
-    padding: 10px 15px;
-    text-align: center;
-    margin: 5px 2px;
-    border-radius: 3px;
-}
-
-#lect{ background-color: $colorLect; }
-#found{ background-color: $colorFound; }
-#event{ background-color: $colorEvent; }
-#mvsearch{ background-color: $colorMv; color: $colorSec; }
 
 .bear-news-slide-shell{
-    margin-bottom: 30px;
+    height: 800px;
+    @include mpb(0 0 30px, 30px 0);
     overflow: hidden;
     @include afterClear;
-    .bear-news-slide{ margin-right: 20%; }
-    &:nth-child(odd) .bear-news-slide{ float: right; }
-    &:nth-child(even) .bear-news-slide{ float: left; }
-    &:nth-child(odd){
-        .video, .para{ float: right; }
+    .bear-news-slide{
+        width: 100%;
+        @include afterClear;
+        .para, .video{
+            @include rect(500px, calc(500px * 0.56));
+            @include mpb(null, 30px, border-box);
+            box-shadow: 0 0 10px 0 #222;
+            transform: scale(.9);
+        }
+        .para{
+            @include bgSet(url('../img/bear-news-1-paper.jpg'), null, null, cover);
+            .para-lect:after, .para-found:after, .para-event:after{
+                content: '';
+                display: block;
+                @include rect(10px, 100%);
+                @include pac(0, -30px, null, null, null);
+                z-index: 1;
+            }
+            .para-lect:after{ background-color: $colorLect; }
+            .para-found:after{ background-color: $colorFound; }
+            .para-event:after{ background-color: $colorEvent; }
+            h3{
+                line-height: 40px;
+                position: relative;
+                z-index: 2;
+            }
+            &:hover h3:after{
+                width: 30px;
+                transition: .1s;
+            }
+            p{ line-height: 1.3; }
+        }
+        .video{
+            @include bgSet(url('../img/card-1.jpg'), null, null, 100% 100%);
+            position: relative;
+            &:hover:before{
+                opacity: 1;
+                transform: rotateX(360deg);
+                transition: 1s;
+            }
+            &:before{
+                content: '';
+                display: block;
+                @include pac(20px, 0, 20px, null);
+                border-left: 30px solid var(--white);
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                opacity: .1;
+                transform: rotateX(0deg);
+                animation: arrowRotate 1.5s infinite;
+            }
+            &:after{
+                content: '';
+                display: block;
+                @include pac(5px, 5px, 5px, 5px);
+                box-shadow: 0 0 0 1px #fff inset;
+            }
+            p{ line-height: 1.3;}
+            .video-tag{
+                line-height: 40px;
+                position: relative;
+                z-index: 2;
+                color: $colorSec;
+            }
+        }
     }
 }
-
-.bear-news-slide{
-    width: 350%;
-    @include afterClear;
-}
-
-.para, .video{
-    height: 170px;
-    max-width: 300px;
-    padding: 30px;
-    box-sizing: border-box;
-    margin-right: 15px;
-    float: left;
-    box-shadow: 0 0 10px 0 #222;
-    transform: scale(.95);
-}
-
-.para{
-    @include bgSet(url('../img/bear-news-1-paper.jpg'), null, null, cover);
-    &:hover{ transform: scale(.98); transition: .3s;}
-    h3{
-        line-height: 40px;
-        position: relative;
-        z-index: 2;
-    }
-    &:hover h3:after{
-        width: 30px;
-        transition: .1s;
-    }
-    p{ line-height: 1.3; }
-}
-
-.video{
-    @include bgSet(url('../img/card-1.jpg'), null, null, 100%);
-    position: relative;
-    &:hover{ transform: scale(.98); transition: .3s;}
-    &:hover:before{
-        opacity: 1;
-        transform: rotateX(360deg);
-        transition: 1s;
-    }
-    &:before{
-        content: '';
-        display: block;
-        @include pac(20px, 0, 20px, null);
-        border-left: 30px solid var(--white);
-        border-top: 20px solid transparent;
-        border-bottom: 20px solid transparent;
-        opacity: .1;
-        transform: rotateX(0deg);
-        animation: arrowRotate 1.5s infinite;
-    }
-    &:after{
-        content: '';
-        display: block;
-        @include pac(5px, 5px, 5px, 5px);
-        box-shadow: 0 0 0 1px #fff inset;
-    }
-    p{ line-height: 1.3;}
-    .video-tag{
-        line-height: 40px;
-        position: relative;
-        z-index: 2;
-        color: $colorSec;
-    }
-}
-
-.para-lect:after, .para-found:after, .para-event:after{
-    content: '';
-    display: block;
-    @include rect(10px, 100%);
-    @include pac(0, -30px, null, null, null);
-    z-index: 1;
-}
-.para-lect:after{ background-color: var(--lect); }
-.para-found:after{ background-color: var(--found); }
-.para-event:after{ background-color: var(--event); }
 
 .bear-news-video-row{
     @for $i from 1 through 5{
@@ -1048,9 +991,7 @@ header:hover .egg{
 .bear-founder-donate{
     width: calc(100% - 60px);
     max-width: 600px;
-    margin: 25px auto;
-    padding: 15px;
-    box-sizing: border-box;
+    @include mpb(25px auto, 15px, border-box);
     background-image: url('../img/paper-rect-1.jpg');
     box-shadow: 0 0 3px 0 #222,
                 0 0 0 0 #fff inset;
@@ -1072,8 +1013,7 @@ header:hover .egg{
 .bear-founder-pic-shell{
     float: left;
     height: 0;
-    margin-top: 7px;
-    padding-bottom: 33.333333%;
+    @include mpb(7px 0 0, 0 0 33.333333%);
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 0 5px #fff,
@@ -1088,8 +1028,7 @@ header:hover .egg{
 
 .bear-founder-text{
     float: left;
-    padding: 20px 30px 0;
-    box-sizing: border-box;
+    @include mpb(null, 20px 30px 0, border-box);
     h3{
         padding-bottom: 20px;
         font-weight: 600;
@@ -1111,9 +1050,7 @@ header:hover .egg{
 .bear-founder-plan{
     width: calc(100% - 60px);
     max-width: 500px;
-    margin: 25px auto;
-    padding: 15px;
-    box-sizing: border-box;
+    @include mpb(25px auto, 15px, border-box);
     position: relative;
     overflow: hidden;
     background-image: url('../img/paper-rect-1.jpg');
@@ -1185,64 +1122,56 @@ header:hover .egg{
 .bear-story-intro-pre{
     position: relative;
     overflow: hidden;
-}
-
-.bear-story-intro-pre-bg-shell{
-    height: 0;
-    padding-bottom: 80%;
-    position: relative;
-    overflow: hidden;
-}
-
-.bear-story-intro-pre-bg{
-    @include rect(100%, 100%);
-    @include bgSet(url('../img/forest-1.jpg'), null, null, cover);
-    position: absolute;
-}
-
-.bear-story-intro-pre-paper{
-    @include pac(null, 0, null, 700px, null);
-    padding: 20px 20px;
-    box-sizing: border-box;
-    background-image: url('../img/paper-rect-1.jpg');
-    z-index: 100;
-    box-shadow: 0 0 20px 0 #222,
-                0 10px 10px 0 #222;
-    h3{
-        width: 600px;
-        margin: auto;
-        text-align: center;
-        line-height: 1.3;
-        font-weight: 300;
+    .bear-story-intro-pre-bg-shell{
+        height: 0;
+        padding-bottom: 80%;
+        position: relative;
+        overflow: hidden;
+        .bear-story-intro-pre-bg{
+            @include rect(100%, 100%);
+            @include bgSet(url('../img/forest-1.jpg'), null, null, cover);
+            position: absolute;
+        }
     }
-}
-
-.bear-story-intro-pre-pic{
-    height: 92.8994%;
-    @include pac(null, null, 0, 0);
-    @include bgSet(url('../img/bear-3.png'), no-repeat, right bottom, 70%);
-    z-index: 10;
+    .bear-story-intro-pre-paper{
+        @include pac(null, 0, null, 20px, null);
+        @include mpb(null, 20px, border-box);
+        background-image: url('../img/paper-rect-1.jpg');
+        z-index: 100;
+        box-shadow: 0 0 20px 0 #222,
+                    0 10px 10px 0 #222;
+        h3{
+            width: 600px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.3;
+            font-weight: 300;
+        }
+    }
+    .bear-story-intro-pre-pic{
+        height: 92.8994%;
+        @include pac(null, null, 0, 0);
+        @include bgSet(url('../img/bear-3.png'), no-repeat, right bottom, 70%);
+        z-index: 10;
+    }
 }
 
 .bear-story-intro{
     overflow: hidden;
     padding: 50px 0;
     background-image: url('../img/bear-story-wood.jpg');
-}
-
-.bear-story-intro-title{
-    text-align: center;
-    padding-bottom: 30px;
-    position: relative;
-    font-size: 0;
-    h3{
-        vertical-align: top;
-        display: inline-block;
-        padding: 45px 50px 15px;
-        height: 80px;
-        box-sizing: border-box;
-        margin-top: -50px;
-        background-image: url('../img/paper-rect-1.jpg');
+    .bear-story-intro-title{
+        text-align: center;
+        padding-bottom: 30px;
+        position: relative;
+        font-size: 0;
+        h3{
+            vertical-align: top;
+            display: inline-block;
+            @include mpb(-50px 0 0, 45px 50px 15px, border-box);
+            height: 80px;
+            background-image: url('../img/paper-rect-1.jpg');
+        }
     }
 }
 
@@ -1335,34 +1264,31 @@ header:hover .egg{
 .bear-story-local-pre{
     position: relative;
     overflow: hidden;
-}
-
-.bear-story-local-pre-bg,
-.bear-story-local-pre-bg-2,
-.bear-story-local-pre-bg-3{
-    height: 0;
-    padding-bottom: 80%;
-    position: relative;
-    background-color: red;
-    background-size: cover;
-}
-
-.bear-story-local-pre-bg{ background-image: url('../img/forest-1.jpg'); }
-.bear-story-local-pre-bg-2{ background-image: url('../img/forest-2.jpg'); box-shadow: 0 -50px 100px 0 #222 inset;}
-.bear-story-local-pre-bg-3{ background-image: url('../img/bear-story-deforest.jpg'); box-shadow: 0 -50px 100px 0 #222 inset;}
-
-.bear-story-local-pre-paper{
-    @include pac(100%, 0, null, null, null);
-    padding: 20px 20px;
-    box-sizing: border-box;
-    background-image: url('../img/paper-rect-1.jpg');
-    z-index: 100;
-    h3{
-        max-width: 600px;
-        margin: auto;
-        text-align: center;
-        line-height: 1.3;
-        font-weight: 300;
+    .bear-story-local-pre-bg,
+    .bear-story-local-pre-bg-2,
+    .bear-story-local-pre-bg-3{
+        height: 0;
+        padding-bottom: 80%;
+        position: relative;
+        background-color: red;
+        background-size: cover;
+    }
+    .bear-story-local-pre-bg{ background-image: url('../img/forest-1.jpg'); }
+    .bear-story-local-pre-bg-2{ background-image: url('../img/forest-2.jpg'); box-shadow: 0 -50px 100px 0   #222 inset;}
+    .bear-story-local-pre-bg-3{ background-image: url('../img/bear-story-deforest.jpg'); box-shadow: 0  -50px 100px 0 #222 inset;}
+    .bear-story-local-pre-paper{
+        @include pac(20px, 0, null, null, null);
+        padding: 20px 20px;
+        box-sizing: border-box;
+        background-image: url('../img/paper-rect-1.jpg');
+        z-index: 100;
+        h3{
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.3;
+            font-weight: 300;
+        }
     }
 }
 
@@ -1377,39 +1303,36 @@ header:hover .egg{
     padding: 20px 0;
     position: relative;
     overflow: hidden;
-}
-
-.bear-story-local-cloth{
-    @include rect(120%, 60px);
-    @include pac(null, 0, null, null, null);
-    @include bgSet(url('../img/index-bear-know-pattern.jpg'), null, null, contain);
-    animation: bigLeft 2s forwards infinite;
-    &:nth-child(1){ top: 0; }
-    &:nth-child(4){ bottom: 0; }
-}
-
-.bear-story-local-bg{
-    height: 500px;
-    @include bgSet(url('../img/bear-story-1-pic.jpeg'), null, center, cover);
-}
-
-.bear-story-local-text{
-    @include bgSet(url('../img/index-bear-know-cloth.jpg'), null, null, contain);
-    padding-bottom: 60px;
-    h3{
-        text-align: center;
-        padding: 20px 0;
-        color: $colorSec;
+    .bear-story-local-cloth{
+        @include rect(120%, 60px);
+        @include pac(null, 0, null, null, null);
+        @include bgSet(url('../img/index-bear-know-pattern.jpg'), null, null, contain);
+        animation: bigLeft 2s forwards infinite;
+        &:nth-child(1){ top: 0; }
+        &:nth-child(4){ bottom: 0; }
     }
-    p{
-        max-width: 600px;
-        margin: auto;
-        padding: 0 40px 20px;
-        line-height: 1.6;
-        font-weight: 300;
-        box-sizing: border-box;
-        color: $colorSec;
-        font-size: 18px;
+    .bear-story-local-bg{
+        height: 500px;
+        @include bgSet(url('../img/bear-story-1-pic.jpeg'), null, center, cover);
+    }
+    .bear-story-local-text{
+        @include bgSet(url('../img/index-bear-know-cloth.jpg'), null, null, contain);
+        padding-bottom: 60px;
+        h3{
+            text-align: center;
+            padding: 20px 0;
+            color: $colorSec;
+        }
+        p{
+            max-width: 600px;
+            margin: auto;
+            padding: 0 40px 20px;
+            line-height: 1.6;
+            font-weight: 300;
+            box-sizing: border-box;
+            color: $colorSec;
+            font-size: 18px;
+        }
     }
 }
 
@@ -1552,33 +1475,30 @@ header:hover .egg{
 }
 
 .bear-story-next-shell{
-    padding: 0 20px;
-    box-sizing: border-box;
-    @include bgSet(url('../img/bear-1.png'), no-repeat, 0 50%, 60%);
-    animation: nextani 5s infinite;
-}
-
-.bear-story-next-button{
-    padding: 20px 0;
-    @include afterClear;
-    h3{
-        display: inline-block;
-        float: right;
-        margin-right: 8.333333%;
-        padding: 20px 30px;
-        box-shadow: 0 0 1px 0 #222,
-                    0 0 0 0 #fff inset;
-        background-image: url('../img/paper-rect-1.jpg');
-        position: relative;
-        &:hover{
+    @include mpb(null, 100px 20px, border-box);
+    @include bgSet(url('../img/bear-1.png'), no-repeat, center, 130%);
+    background-attachment: fixed;
+    .bear-story-next-button{
+        padding: 20px 0;
+        @include afterClear;
+        h3{
+            display: inline-block;
+            float: right;
+            @include mpb(0 0 8.333333% 0, 20px 30px);
             box-shadow: 0 0 1px 0 #222,
-                        0 0 20px 0 #fff inset;
-        }
-        &:after{
-            content: 'NEXT';
-            display: block;
-            @include pac(3px, 3px, null, null, null);
-            font-size: 10px;
+                        0 0 0 0 #fff inset;
+            background-image: url('../img/paper-rect-1.jpg');
+            position: relative;
+            &:hover{
+                box-shadow: 0 0 1px 0 #222,
+                            0 0 20px 0 #fff inset;
+            }
+            &:after{
+                content: 'NEXT';
+                display: block;
+                @include pac(3px, 3px, null, null, null);
+                font-size: 10px;
+            }
         }
     }
 }
@@ -2016,6 +1936,25 @@ header:hover .egg{
 
 .bear-news-hot, .bear-news-normal{ overflow: hidden; }
 
+.bear-news-pages{
+    ul{
+        font-size: 0;
+        text-align: center;
+        li{
+            font-size: 20px;
+            display: inline-block;
+            cursor: pointer;
+            @include mpb(0 5px, 10px, null);
+            background-color: #ccc;
+            box-shadow: 0 0 1px 0 #222;
+            &:hover{
+                background-color: lighten(#ccc, 10%);
+                box-shadow: 0 0 2px 0 #222;
+            }
+        }
+    }
+}
+
 /* Bear News 2 */
 
 iframe{
@@ -2077,19 +2016,18 @@ iframe{
         @include pac(5px, 5px, 5px, 5px);
         box-shadow: 0 0 0 1px #fff inset;
     }
-}
+    .video-play-tag, .video-play-name, .video-play-time, .video-play-intro{
+        color: $colorSec;
+    }
 
-.video-play-tag, .video-play-name, .video-play-time, .video-play-intro{
-    color: $colorSec;
-}
+    .video-play-tag, .video-tag{ line-height: 2; }
 
-.video-play-tag, .video-tag{ line-height: 2; }
-
-.video-play-name, .video-name{
-    display: inline-block;
-    padding-bottom: 10px;
-    color: $colorSec;
-    font-weight: 300;
+    .video-play-name, .video-name{
+        display: inline-block;
+        padding-bottom: 10px;
+        color: $colorSec;
+        font-weight: 300;
+    }
 }
 
 .video-hover-show{
@@ -2101,13 +2039,6 @@ iframe{
     transform: rotateY(-90deg);
     transform-origin: left;
     z-index: 2000;
-}
-
-.video{
-    &:hover .video-hover-show{
-        transform: rotateY(0deg);
-        transition: .3s;
-    }
 }
 
 .video-play-time, .video-time{
@@ -2145,7 +2076,7 @@ iframe{
 .bear-news-video-row-shell{
     overflow: hidden;
     .bear-news-video-row{
-        width: 300%;
+        margin: 10px 0;
         .video-tag{
             line-height: 2;
             font-size: 16px;
@@ -2266,19 +2197,17 @@ iframe{
 }
 
 .bear-support-form-shell{
-    padding: 30px 20px;
-    box-sizing: border-box;
+    @include mpb(null, 30px 20px, border-box);
     background-image: url('../img/forest-4.jpg');
-}
-
-.bear-support-form-title{
-    margin: auto;
-    background-image: url('../img/paper-rect-1.jpg');
-    box-shadow: 0 0 3px 0 #222;
-    .bear-support-form-title h3{
-        padding: 30px 50px;
-        box-sizing: border-box;
-        text-align: center;
+    .bear-support-form-title{
+        margin: auto;
+        background-image: url('../img/paper-rect-1.jpg');
+        box-shadow: 0 0 3px 0 #222;
+        h3{
+            @include mpb(null, 30px, border-box);
+            text-align: center;
+            line-height: 1.3;
+        }
     }
 }
 
@@ -2311,8 +2240,8 @@ iframe{
     font-size: 0;
     li{
         display: inline-block;
-        margin: 5px 2px;
-        padding: 5px 10px;
+        cursor: pointer;
+        @include mpb(5px 2px, 5px 10px, null);
         background-color: lightblue;
         &:hover{
             background-color: pink;
@@ -2322,10 +2251,16 @@ iframe{
 }
 
 .check-final{
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 0 0 1px #555;
     background-color: #fff;
+    h3{ line-height: 1.3; }
+    #money-final,
+    #item-final{
+        color: deeppink;
+        font-weight: 600;
+    }
 }
 
 .check-submit{
@@ -2337,6 +2272,10 @@ iframe{
     font-size: 30px;
     font-family: Noto sans cjk tc, "微軟正黑體";
     box-shadow: 0 0 1px 0 #222;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 0 3px 0 #222;
+    }
 }
 
 /* Bear Support 2 */
@@ -2348,8 +2287,7 @@ iframe{
 }
 
 .bear-support-list-shell{
-    padding: 20px 30px;
-    box-sizing: border-box;
+    @include mpb(null, 20px 30px, border-box);
     background-image: url('../img/paper-rect-1.jpg');
     h3{
         padding: 20px 0;
@@ -2363,7 +2301,12 @@ iframe{
             display: inline-block;
             vertical-align: top;
             background-image: url('../img/paper-rect-1.jpg');
-            box-shadow: 0 0 1px 0 #222;
+            box-shadow: 0 0 1px 0 #222,
+                        0 0 0 0 #fff inset;
+            &:hover{
+                box-shadow: 0 0 1px 0 #222,
+                            0 0 5px 5px #fff inset;
+            }
             div{
                 @include rect(98%, 200px);
                 @include bgSet(null, no-repeat, center, 80%);
@@ -2383,6 +2326,21 @@ iframe{
         font-size: 16px;
         text-align: center;
     }
+    #bear-support-list-join{
+        padding: 20px 0;
+        text-align: center;
+        cursor: pointer;
+        h3{
+            width: 60%;
+            display: inline-block;
+            border-radius: 5px;
+            color: $colorSec;
+            background-color: rgba($colorMain, .7);
+            &:hover{
+                background-color: lighten(rgba($colorMain, .5), 10%);
+            }
+        }
+    }
 }
 
 .bear-support-package{
@@ -2391,6 +2349,9 @@ iframe{
     li{
         display: inline-block;
         padding: 20px 0;
+        &:hover{
+            background-color: rgba(125, 125, 125, .6);
+        }
     }
 }
 
@@ -2431,6 +2392,7 @@ iframe{
     display: inline-block;
     position: relative;
     border-radius: 20px 0 0 20px;
+    cursor: pointer;
     &:after{
         content: '';
         display: block;
@@ -2454,6 +2416,7 @@ iframe{
     @include rect(40px, 40px, $colorMain);
     position: relative;
     border-radius: 0 20px 20px 0;
+    cursor: pointer;
     &:before{
         content: '';
         display: block;
@@ -2634,6 +2597,10 @@ iframe{
 
 .bear-about-info{
     @include bgSet(url('../img/bear-news-search.jpg'), null, null, contain);
+    .bear-about-info-text{
+        text-align: center;
+        h2{ padding-bottom: 30px; }
+    }
 }
 
 .bear-about-concept{
@@ -2643,44 +2610,66 @@ iframe{
 .bear-about-tech{
     background-image: linear-gradient(0deg, rgba(255,255,255, 0), rgba(255,255,255,.5)),
                       url('../img/bear-about-pic1.jpg');
+                
 }
 
-.bear-about-info-text{
-    text-align: center;
-    h2{ padding-bottom: 30px; }
-}
-
-.bear-about-concept-flex,
-.bear-about-tech-flex{
+.bear-about-row-flex{
     padding: 0 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-}
-
-.bear-about-concpet-title,
-.bear-about-tech-title{
-    padding: 20px;
-    text-align: center;
-}
-
-.bear-about{
-    margin: 5px -5px;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    background-image: url('../img/paper-rect-1.jpg');
-    box-shadow: 0 0 3px 0 #222,
-                0 0 0 0 #fff inset;
-    &:hover{
-        box-shadow: 0 0 5px 0 #222,
-                    0 0 20px 0 #fff inset;
+    .bear-about-title{
+        padding: 20px;
+        text-align: center;
     }
-    h3{ line-height: 2; }
-    p{
-        line-height: 1.3;
-        padding-bottom: 10px;
+}
+
+.bear-about-tech-item-shell{
+    >h3{
+        text-align: center;
+        padding: 20px 0;
+    }
+    .bear-about-pic{
+        @include rect(null, 300px, pink);
+        @include bgSet(null, no-repeat, center, cover);
+    }
+}
+
+.bear-about-flex{
+    display: flex;
+    flex-wrap: wrap;
+    .bear-about{
+        @include mpb(null, 10px 20px, border-box);
+        position: relative;
+        background-image: url('../img/paper-rect-1.jpg');
+        box-shadow: 0 0 3px 0 #222,
+                    0 0 0 0 #fff inset;
+        &:hover{
+            box-shadow: 0 0 5px 0 #222,
+                        0 0 20px 0 #fff inset;
+        }
+        h3{ line-height: 2; }
+        p{
+            line-height: 1.3;
+            padding-bottom: 10px;
+        }
+        #bear-about-me{
+            @include pac(null, 0, 0, 10px);
+            h5{
+                @include mpb(0 auto, 10px, null);
+                text-align: center;
+                color: $colorSec;
+                background-color: $colorMain;
+                border-radius: 10px;
+                cursor: pointer;
+                &:hover{
+                    background-color: lighten($colorMain, 10%);
+                    box-shadow: 0 0 4px 0 #222;
+                }
+            }
+        }
     }
 }
 

@@ -8,35 +8,22 @@
     h6, p, a{ font-size: $fontSize6 * 2; }
 }
 
-// xl mixin
+// mixin xl
 @mixin titleXl(){ padding: 20px 0; }
 
 // media
-@media screen and (min-width: 1200px){
-    .aniLineG{
-        top: 200px;
-    }
-}
 
 @media screen and (min-width: 1200px){
+    .aniLineG{ top: 200px; }
+
     .wrap{
         .sitemap{
-            h5{ font-size: $fontSize5 * 2;}
+            h5, h5 a{ font-size: $fontSize5 * 2;}
         }
-    }
-}
-
-@media screen and (min-width: 1200px){
-    .wrap{
         .bear-story{
             padding: 50px 0;
             .bear-title{ @include titleXl();  }
         }
-    }
-}
-
-@media screen and (min-width: 1200px){
-    .wrap{
         .bear-know{
             padding: 50px 0;
             .bear-know-title{ @include titleXl(); }
@@ -49,6 +36,12 @@
             padding: 50px 0;
             .bear-news-title{ @include titleXl(); }
         }
+        .bear-news-slide-shell{
+            .bear-news-slide{
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
         .bear-founder{
             @include bgSet(url('../img/woodbear-xl-1.png'), null, left bottom, 2600px 1450px);
             padding: 50px 0;
@@ -56,43 +49,36 @@
         }
         .bear-founder-plan{
             min-height: 400px;
-            .bear-founder-plan-text{ padding-top: 50px; }
             .bear-founder-text{
                 h3{ font-size: 40px; }
                 p{ font-size: 30px; }
             }
+            .bear-founder-plan-text{ padding-top: 50px; }
         }
-    }
-}
-
-@media screen and (min-width: 1200px){
-    .bear-story-local-pre{
-        height: 700px;
-    }
-    .bear-story-local-pre-bg-2{
-        background-size: contain;
-        background-position: 0 900px;
-    }
-    .bear-story-intro-pre-paper h3{
-        width: 1000px;
-    }
-    .bear-story-intro-coll-text-shell{
-        height: 350px;
-    }
-    .bear-story-intro-coll-title{
-        width: 200px;
-        background-size: 100%;
-    }
-    .bear-story-rule-paper:nth-child(4){
-        top: 600px;
-        left: 400px;
-    }
-    .bear-story-local-text p{
-        padding: 0;
-        font-size: 20px;
-    }
-    .bear-story-next-shell{
-        padding: 60px 0;
+        .bear-story-local-pre{
+            height: 700px;
+            .bear-story-local-pre-bg-2{
+                background-size: contain;
+                background-position: 0 900px;
+            }
+            .bear-story-intro-pre-paper{
+                h3{ width: 1000px; }
+            }
+        }
+        .bear-story-intro-coll-text-shell{ height: 350px; }
+        .bear-story-intro-coll-title{
+            width: 200px;
+            background-size: 100%;
+        }
+        .bear-story-rule-paper:nth-child(4){
+            top: 600px;
+            left: 400px;
+        }
+        .bear-story-local-text p{
+            padding: 0;
+            font-size: 20px;
+        }
+        .bear-story-next-shell{ padding: 60px 0; }
     }
 }
 

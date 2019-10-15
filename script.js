@@ -41,6 +41,7 @@ $(document).ready(function(){
 window.addEventListener('load', function(){
     //fixed menu
     // window.addEventListener('scroll', fixed, false);
+    fixed();
     $(window).scroll(fixed);
     //nav mouseover
     nav();
@@ -51,11 +52,11 @@ window.addEventListener('load', function(){
         case "index":
             indexKnowSlider();
             fixSlider();
+            filter();
             break;
         case "黑熊來歷":
             bearStoryOneIntroSlider();
             jumpinfo();
-            hoverfix();
             break;
         case "黑熊生活":
             explain();
@@ -72,6 +73,9 @@ window.addEventListener('load', function(){
         case "黑熊危機":
             cross();
             break;
+        case "最新消息":
+            filter();
+            break;
         case "黑熊頻道":
             bearMovie();
             bearMovieSlide();
@@ -83,6 +87,7 @@ window.addEventListener('load', function(){
             moneySubmit();
             break;
         case "物資捐贈":
+            scrollTo('bear-support-list-join', 'bear-support-form-wrap');
             packageAmount();
             packageCheck();
             packageSubmit();
@@ -90,11 +95,15 @@ window.addEventListener('load', function(){
         case "募資計畫":
             picChange();
             break;
+        case "關於我們":
+            scrollTo('bear-about-me', 'bear-about-git');
+            addLink("github-1", "https://github.com/tadashi0430/TaiwanBlackBearStoryHouse");
+            break;
     }
 }, false);
 
 // scroll
-function fixed(e){
+function fixed(){
     var title = document.getElementById('title');
     var scrollH = document.documentElement.scrollTop;
     title.style.top = `${scrollH}px`;
@@ -147,6 +156,18 @@ function fixSlider(){
     }, false);
 }
 
+function filter(){
+    $('.bear-search-tag').click(function(){
+        $('.bear-news-slide div').css('display', 'block');
+        let name = "para-" + $(this).attr("id");
+        console.log(name);
+        if(name === "para-all"){
+            $('.bear-news-slide div').fadeIn(500);
+        }else{
+            $('.bear-news-slide' + ` h3:not(.${name})`).parent().parent().fadeOut(500);
+        }
+    });
+}
 
 function bearStoryOneIntroSlider(){
     var arrowL = document.querySelector('.bear-story-intro-arrow-left');
@@ -228,15 +249,6 @@ function jumpinfo(){
         }, false);
         });        
     }
-}
-
-function hoverfix(){
-    $('.bear-story-intro-pre-pic').hover(function(){
-        $('.bear-story-intro-pre-paper').animate({'bottom': '10px'}, 800); 
-    });
-    $('.bear-story-local-pre').hover(function(){
-        $('.bear-story-local-pre-paper').animate({'top': '10px'}, 800); 
-    });
 }
 
 /*----------------------------認識黑熊 Start--------------------------*/
@@ -707,4 +719,23 @@ function picChange(){
         pic[i-1].style.backgroundImage = tempA;        
     }, false);
     }
+}
+
+// bear-about
+
+function scrollTo(id, target){
+    $(`#${id}`).click(function(){
+        console.log('start');
+        $('html, body').animate({
+            scrollTop: $(`#${target}`).offset().top - 60,
+        });
+    });
+}
+
+function addLink(id, href){
+    let target = document.getElementById(id);
+    target.url = href;
+    target.addEventListener('click', function(url){
+        window.open(this.url);
+    }, false);
 }
