@@ -16,6 +16,7 @@
 @media screen and (min-width: 1200px){
     .aniLineG{ top: 200px; }
 
+
     .wrap{
         .sitemap{
             h5, h5 a{ font-size: $fontSize5 * 2;}
@@ -23,6 +24,12 @@
         .bear-story{
             padding: 50px 0;
             .bear-title{ @include titleXl();  }
+            .bear-story-text{
+                p{
+                    font-size: $fontSize6 * 2;
+                    line-height: 1.8;
+                }
+            }
         }
         .bear-know{
             padding: 50px 0;
@@ -30,7 +37,10 @@
         }
         .bear-know-slide-chapter{ width: 25%; }
         .bear-know-text{
-            p{ line-height: 1.6;}
+            p{
+                font-size: $fontSize6 * 1.4;
+                line-height: 1.6;
+            }
         }
         .bear-news{
             padding: 50px 0;

@@ -499,9 +499,11 @@ header:hover .egg{
         height: 600px;
         position: relative;
         @include bgSet(url('../img/index-banner.jpg'), null, center, cover);
+        background-attachment: fixed;
         .bear-info-text{
             @include pac(0, 0, 0, 0);
             h2{
+                padding: 150px 0;
                 text-align: center;
                 line-height: 2;
                 font-weight: 500;
@@ -644,7 +646,7 @@ header:hover .egg{
         background-image: url('../img/bear-1.png'),
                           url('../img/bear-5.png');
         background-repeat: no-repeat, no-repeat;
-        background-position: 10% 0%, 85% 0%;
+        background-position: 10% 0%, 85% 10%;
         z-index: 1;
         animation: bear-know-slide 5s infinite alternate;
     }
@@ -712,6 +714,7 @@ header:hover .egg{
 
 .bear-know-slide-long{
     width: 400%;
+    display: flex;
     @include mpb(null, 20px 0, border-box);
     @include bgSet(url('../img/index-bear-know-cloth.jpg'), null, null, contain, pink);
     overflow: hidden;
@@ -736,32 +739,31 @@ header:hover .egg{
         z-index: -1;
         animation: slightLeft 2s forwards infinite;
     }
-    a:nth-child(1) .bear-know-icon{ background-image: url('../img/index-baer-know-pic1.png');}
-    a:nth-child(2) .bear-know-icon{ background-image: url('../img/index-baer-know-pic2.png');}
-    a:nth-child(3) .bear-know-icon{ background-image: url('../img/index-baer-know-pic3.png');}
-    a:nth-child(4) .bear-know-icon{ background-image: url('../img/index-baer-know-pic4.png');}
-}
-
-.bear-know-slide-chapter{
-    width: 25%;
-    float: left;
-    position: relative;
-    &:before{
-        @include rect(0%, 5%, #fff);
-        @include pac(0, 0, 0, 0);
-        content: '';
-        display: block;
-        border-radius: 10px;
-        opacity: .2;
-    }
-    &:hover:before{
-        @include rect(80%, 95%);
-        transition: width .3s,
-                    height .3s .3s;
-    }
-    @include afterClear;
-    &:hover .bear-know-icon{
-        animation: bearRotate 2s .5s;
+    .bear-know-icon:nth-child(1){ background-image: url('../img/index-baer-know-pic1.png');}
+    .bear-know-icon:nth-child(2){ background-image: url('../img/index-baer-know-pic2.png');}
+    .bear-know-icon:nth-child(3){ background-image: url('../img/index-baer-know-pic3.png');}
+    .bear-know-icon:nth-child(4){ background-image: url('../img/index-baer-know-pic4.png');}
+    .bear-know-slide-chapter{
+        width: 25%;
+        float: left;
+        position: relative;
+        &:before{
+            @include rect(0%, 5%, #fff);
+            @include pac(0, 0, 0, 0);
+            content: '';
+            display: block;
+            border-radius: 10px;
+            opacity: .2;
+        }
+        &:hover:before{
+            @include rect(80%, 95%);
+            transition: width .3s,
+                        height .3s .3s;
+        }
+        @include afterClear;
+        &:hover .bear-know-icon{
+            animation: bearRotate 2s .5s;
+        }
     }
 }
 
@@ -1123,13 +1125,12 @@ header:hover .egg{
     position: relative;
     overflow: hidden;
     .bear-story-intro-pre-bg-shell{
-        height: 0;
-        padding-bottom: 80%;
+        height: 500px;
+        @include bgSet(url('../img/forest-1.jpg'), null, null, cover);
         position: relative;
         overflow: hidden;
         .bear-story-intro-pre-bg{
             @include rect(100%, 100%);
-            @include bgSet(url('../img/forest-1.jpg'), null, null, cover);
             position: absolute;
         }
     }
@@ -1149,7 +1150,7 @@ header:hover .egg{
         }
     }
     .bear-story-intro-pre-pic{
-        height: 92.8994%;
+        height: 100%;
         @include pac(null, null, 0, 0);
         @include bgSet(url('../img/bear-3.png'), no-repeat, right bottom, 70%);
         z-index: 10;

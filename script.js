@@ -47,6 +47,13 @@ window.addEventListener('load', function(){
     nav();
     $(window).resize(nav);
 
+    // <768
+    // window.addEventListener('resize', function(){
+    //     if(document.body.clientWidth+16 < 768){
+    //         console.log('phone use');
+    //     }
+    // }, false);
+
     //plus js
     switch(document.title){
         case "index":
