@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑熊頻道</title>
+@@include('src.html')
+</head>
+
+<body>
+@@include('loading.html')
+@@include('header.html')
+    <!----------------------- bear news info ----------------------->
+
+    <div class="wrap">
+        <div class="bear-news-info container">
+            <div class="row">
+                <div class="bear-donate-info-text col-12">
+                    <h2>黑熊頻道</h2>
+                    <h2>黑熊頻道收錄各種台灣黑熊相關的影片紀錄，您可以在此更加深入了解台灣黑熊的生活</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------- bear news play ----------------------->
+
+    <div class="wrap">
+        <div class="bear-news-video-shell container">
+            <div class="row">
+                <div id="playNow" class="bear-news-video col-12 col-md-6">
+                    <video class="videoCss col-10 col-md-12" src="#" controls loop autoplay></video>
+                </div>
+                <div class="bear-news-video-text col-10 col-md-4">
+                    <h3 class="video-play-tag">選擇影片來認識黑熊吧！</h3>
+                    <h3 class="video-play-name"></h3>
+                    <h4 class="video-play-time"></h4>
+                    <p class="video-play-intro"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!----------------------- bear news play ----------------------->
+
+    <div class="wrap">
+        <div class="bear-news-video-shell container">
+            <div class="row">
+                <div class="bear-search-shell col-8">
+                    <div class="bear-search-bar col-12">
+                        <input class="bear-search-text col-10">
+                        <input type="submit" class="bear-search-submit col-2" value="查詢">
+                    </div>
+                    <ul class="bear-search-tag-shell col-12">
+                        <li id="all" class="bear-search-tag">全部影片</li>
+                        <li id="lect" class="bear-search-tag">深入了解</li>
+                        <li id="found" class="bear-search-tag">募資活動</li>
+                        <li id="event" class="bear-search-tag">黑熊活動</li>
+                    </ul>
+                </div>
+                <div class="bear-news-video-row-shell col-12">
+                    <div id="theme1" class="bear-news-video-row col-12">
+                        <div class="bear-news-video-row">
+                            <div class="bear-news-video-text videoInside col-5">
+                                <h3 class="video-tag"></h3>
+                                <h3 class="video-name"></h3>
+                                <h4 class="video-time"></h4>
+                                <div class="video-hover-show">
+                                    <p class="video-intro"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bear-news-video-row">
+                            <div class="bear-news-video-text videoInside col-5">
+                                <h3 class="video-tag"></h3>
+                                <h3 class="video-name"></h3>
+                                <h4 class="video-time"></h4>
+                                <div class="video-hover-show">
+                                    <p class="video-intro"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bear-news-pages">
+                    <ul>
+                        <li>前一頁</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>下一頁</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+@@include('footer.html')
+</body>
+
+</html>

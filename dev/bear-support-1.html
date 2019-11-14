@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>線上捐款</title>
+@@include('src.html')
+</head>
+
+<body>
+@@include('loading.html')
+@@include('header.html')
+
+    <!----------------------- bear donate info ----------------------->
+
+    <div class="wrap">
+        <div class="bear-donate-info container">
+            <div class="row">
+                <div class="bear-donate-change col-1">
+                    <a href="./bear-support-3.html"><h3>募資計畫</h3></a>
+                </div>
+                <div class="bear-donate-info-text col-12">
+                    <h2>線上捐款</h2>
+                    <h2>希望能與您一同了解台灣黑熊的美麗之處</h2>
+                </div>
+                <div class="bear-donate-change col-1">
+                    <a href="./bear-support-2.html"><h3>物資捐贈</h3></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------- bear support form ----------------------->
+
+    <div class="wrap">
+        <div class="bear-support-form-shell container">
+            <div class="row">
+                <div class="bear-support-form-title col-8">
+                    <h3>非常感謝您的加入！<br>請完成以下清單:</h3>
+                </div>
+                <div class="bear-support-form col-8">
+                    <form action="bear-support-1.html">
+                        <div class="check col-12 col-md-6">
+                            <label class="col-4">姓名</label>
+                            <input type="text" name="founderName" id="founder-name" class="col-8">
+                        </div>
+                        <div class="check col-12 col-md-6">
+                            <label>連絡電話</label>
+                            <input type="text" name="founderPhone" id="founder-phone" class="col-8" maxlength="10">
+                        </div>
+                        <div class="check col-12">
+                            <label>信箱</label>
+                            <input type="text" name="founderEmail" id="founder-email" class="col-8">
+                        </div>
+                        <div class="check check-select col-6">
+                            <label>縣市</label>
+                            <select name="" id="founder-city">
+                                <option value="0">縣市</option>
+                                <option value="1">台北市</option>
+                                <option value="2">新北市</option>
+                                <option value="3">桃園市</option>
+                                <option value="4">台中市</option>
+                                <option value="5">台南市</option>
+                            </select>
+                        </div>
+                        <div class=" check check-select col-6">
+                            <label>鄉鎮區</label>
+                            <select name="" id="founder-town">
+                                <option value="0">縣市</option>
+                                <option value="1">台北市</option>
+                                <option value="2">新北市</option>
+                                <option value="3">桃園市</option>
+                                <option value="4">台中市</option>
+                                <option value="5">台南市</option>
+                            </select>
+                        </div>
+                        <div class=" check col-12 col-md-3">
+                            <label>郵遞區號</label>
+                            <input type="text" name="founderZip" id="founder-zip" class="col-8">
+                        </div>
+                        <div class="check col-12 col-md-9">
+                            <label>街道巷弄</label>
+                            <input type="text" name="founderAddr" id="founder-addr" class="col-8">
+                        </div>
+                        <div class="check col-12">
+                            <label>您想說的話</label>
+                            <textarea name="founderRemark" id="founder-remark" class="col-8"></textarea>
+                        </div>
+                        <div class="check col-12">
+                            <label>捐款金額</label>
+                            <input type="text" name="founderMoney" id="founder-money" class="col-8">
+                            <ul class="check-money">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="check-final">
+                            <h3>您的捐款金額為<br>新台幣<span id="money-final">0</span>元</h3>
+                        </div>
+                        <input id="check-submit" class="check-submit col-6" type="button" value="送出">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@@include('footer.html')
+</body>
+
+</html>
