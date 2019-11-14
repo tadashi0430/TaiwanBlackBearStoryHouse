@@ -1,0 +1,28 @@
+{
+  "name": "taiwanblackbearstoryhouse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-file-include": "^2.1.0",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^4.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadashi0430/TaiwanBlackBearStoryHouse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tadashi0430/TaiwanBlackBearStoryHouse/issues"
+  },
+  "homepage": "https://github.com/tadashi0430/TaiwanBlackBearStoryHouse#readme"
+}
